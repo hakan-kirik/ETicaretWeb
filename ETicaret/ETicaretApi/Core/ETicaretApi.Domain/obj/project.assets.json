@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Domain\\ETicaretApi.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Domain\\ETicaretApi.Domain.csproj",
       "projectName": "ETicaretApi.Domain",
-      "projectPath": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Domain\\ETicaretApi.Domain.csproj",
+      "projectPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Domain\\ETicaretApi.Domain.csproj",
       "packagesPath": "C:\\Users\\owl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Domain\\obj\\",
+      "outputPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\owl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

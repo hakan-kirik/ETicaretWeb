@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomToasterService, ToastrMessageType, ToastrPosition } from './services/ui/custom-toaster.service';
 
 
 @Component({
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EticaretClientAngular';
+constructor(){
+  
 }
+  
+}
+

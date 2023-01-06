@@ -25,16 +25,22 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/alertifyjs/build/css/alertify.min.css",
+              "node_modules/alertifyjs/build/css/themes/semantic.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/ngx-spinner/animations/ball-triangle-path.css",
+              "node_modules/ngx-spinner/animations/ball-spin.css"
+
+            
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-             "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-             "node_modules/bootstrap/dist/js/bootstrap.js",
-             "node_modules/popper.js/dist/popper.js",
-             "node_modules/jquery/dist/jquery.js"
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/alertifyjs/build/alertify.min.js"
             ]
           },
           "configurations": {
@@ -97,6 +103,7 @@
             "styles": [
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
+              
             ],
             "scripts": []
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nT483qRX8NgdAiDOaZBrtYsqJCDhV4BRUY4j9O95tCiJ03r8haVsUrUaHK5WU3DGKApFPkWjUXOC6Lj1BEfHSQ==",
+  "dgSpecHash": "dcKI9qxQKQqMcWZTgD9LHwK3hB6rNm22kRLyOPMoi50sMMZogns7RFqb4leydBWSPhx3PX7PWOB9N4QAf8+9PA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj",
+  "projectFilePath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\owl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\owl\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

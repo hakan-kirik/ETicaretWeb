@@ -1600,11 +1600,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\ETicaretApi.API.csproj",
+      "projectUniqueName": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\ETicaretApi.API.csproj",
       "projectName": "ETicaretApi.API",
-      "projectPath": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\ETicaretApi.API.csproj",
+      "projectPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\ETicaretApi.API.csproj",
       "packagesPath": "C:\\Users\\owl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\obj\\",
+      "outputPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\owl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1619,11 +1619,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Application\\ETicaretApi.Application.csproj": {
-              "projectPath": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Application\\ETicaretApi.Application.csproj"
+            "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Application\\ETicaretApi.Application.csproj": {
+              "projectPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Core\\ETicaretApi.Application\\ETicaretApi.Application.csproj"
             },
-            "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj": {
-              "projectPath": "C:\\Users\\owl\\source\\repos\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj"
+            "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj": {
+              "projectPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj"
             }
           }
         }
@@ -1668,7 +1668,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
