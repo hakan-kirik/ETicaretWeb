@@ -13,7 +13,7 @@ namespace ETicaretApi.Application.Repositories
         Task<bool> AddAsync(T model);
         Task<bool> AddRangeAsync(List<T> models);
         bool Remove(T model);
-        Task<bool> Remove(string id);
+        Task<bool> RemoveAsync(string id);
         bool RemoveRange(List<T> models);
         bool Update(T model);
         Task<int> SaveAsync();
