@@ -130,3 +130,8 @@ C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETic
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\obj\Debug\net6.0\ETicaretApi.API.pdb
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\obj\Debug\net6.0\ETicaretApi.API.genruntimeconfig.cache
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\obj\Debug\net6.0\ref\ETicaretApi.API.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\ETicaretApi.Infrastructure.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\ETicaretApi.Infrastructure.pdb
