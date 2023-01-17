@@ -1,4 +1,5 @@
 ﻿using ETicaretApi.Application.Repositories.ProductRepo;
+using ETicaretApi.Application.RequestParameters;
 using ETicaretApi.Application.ViewModels.Products;
 using ETicaretApi.Domain.Entities;
 using Microsoft.AspNetCore.Http;
@@ -20,24 +21,43 @@ namespace ETicaretApi.API.Controllers
             _productWriteRepository = productWriteRepository;
         }
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] Pagination pagination)
         {
-            return Ok(_productReadRepository.GetAll(false));
-            //var count = await _productWriteRepository.AddAsync(new()
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Name = "product",
-            //    Price = 23.4F,
-            //    Stock = 23
-            //});
-         // var product= await _productReadRepository.GetByIdAsync("69a332c9-465e-4876-8385-32946c9040d1");
-          //  product.Name = "hakanss";
-           // await _productWriteRepository.SaveAsync();
-        }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(string id)
+            int totalCount = _productReadRepository.GetAll(false).Count();   
+            var products = _productReadRepository.GetAll(false).Skip(pagination.Page*pagination.Size).Take(pagination.Size).Select(
+               p => new
+               {
+                   p.Id,
+                   p.Name,
+                   p.Price,
+                   p.Stock,
+                   p.CreatedDate,
+                   p.UpdatedDate
+               });
+			return Ok(new
+            {
+                totalCount,
+                products
+            });
+
+			//var count = await _productWriteRepository.AddAsync(new()
+			//{
+			//    Id = Guid.NewGuid(),
+			//    Name = "product",
+			//    Price = 23.4F,
+			//    Stock = 23
+			//});
+			// var product= await _productReadRepository.GetByIdAsync("69a332c9-465e-4876-8385-32946c9040d1");
+			//  product.Name = "hakanss";
+			// await _productWriteRepository.SaveAsync();
+		}
+		[HttpGet("{id}")]
+        public async Task<IActionResult> Get([FromRoute] string id)
         {
-            return Ok(await _productReadRepository.GetByIdAsync(id, false));
+           var product= await _productReadRepository.GetByIdAsync(id, false);
+
+
+			return Ok(product);
         }
 
         [HttpPost]

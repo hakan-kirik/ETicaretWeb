@@ -14,8 +14,8 @@ namespace ETicaretApi.Infrastructure.Filters
 		{
 			if(!context.ModelState.IsValid)
 			{
-				var errors = context.ModelState.Where(x => x.Value.Errors.Any())
-					.ToDictionary(e => e.Key, e => e.Value.Errors.Select(e => e.ErrorMessage)).ToArray();
+				var errors = context.ModelState.Where(x => x.Value!.Errors.Any())
+					.ToDictionary(e => e.Key, e => e.Value!.Errors.Select(e => e.ErrorMessage)).ToArray();
 
 				context.Result = new BadRequestObjectResult(errors);
 				return;
