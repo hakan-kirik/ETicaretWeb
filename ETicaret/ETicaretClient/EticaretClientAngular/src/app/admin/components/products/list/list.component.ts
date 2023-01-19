@@ -17,8 +17,11 @@ export class ListComponent extends BaseComponent implements OnInit {
   constructor(spinner: NgxSpinnerService, private productService: ProductService, private alertifyService: AlertifyService) {
     super(spinner);
   }
+  delete(id){
+    alert(id);
+  }
 
-  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate'];
+  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate','edit','delete'];
   dataSource: MatTableDataSource<List_Product> = null;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
