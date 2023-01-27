@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "eSdxuo2XwJZjEmDpldmZEPoz0dX+p8k6C+skXen6xXY=",
+  "Hash": "ZfOyrvgotjP4JFtF0a0F9zisJReKObM1bxLCxrBVaIs=",
   "Source": "ETicaretApi.API",
   "BasePath": "_content/ETicaretApi.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ETicaretApi.API\\wwwroot",
+      "Source": "ETicaretApi.API",
+      "ContentRoot": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\wwwroot\\",
+      "BasePath": "_content/ETicaretApi.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
