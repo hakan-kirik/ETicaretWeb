@@ -36,7 +36,7 @@
   
       <ng-container matColumnDef="delete" >
         <th mat-header-cell *matHeaderCellDef> </th>
-        <td [id]="element.id" mat-cell *matCellDef="let element" appDelete (callback)="getProducts()" > </td>
+        <td [id]="element.id" controller="products" mat-cell *matCellDef="let element" appDelete (callback)="getProducts()" > </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

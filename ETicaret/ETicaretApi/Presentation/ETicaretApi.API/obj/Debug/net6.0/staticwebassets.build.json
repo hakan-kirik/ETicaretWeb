@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZfOyrvgotjP4JFtF0a0F9zisJReKObM1bxLCxrBVaIs=",
+  "Hash": "BnnSu7f9u1GMLTKpGxFXF9PBkOmsFyFReUejBifjZvE=",
   "Source": "ETicaretApi.API",
   "BasePath": "_content/ETicaretApi.API",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\wwwroot\\resource\\product-images\\345523469.PNG",
+      "SourceId": "ETicaretApi.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Presentation\\ETicaretApi.API\\wwwroot\\",
+      "BasePath": "_content/ETicaretApi.API",
+      "RelativePath": "resource/product-images/345523469.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\product-images\\345523469.PNG"
+    }
+  ]
 }
