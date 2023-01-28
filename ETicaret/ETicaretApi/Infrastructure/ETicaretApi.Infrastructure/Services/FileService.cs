@@ -43,6 +43,7 @@ namespace ETicaretApi.Infrastructure.Services
 			while (File.Exists($"{path}\\{name}"))
 			{
 				name = $"{nameWithoutExtencion}({count}){extencion}";
+				count++;
 			}
 			return name;
 
@@ -61,19 +62,13 @@ namespace ETicaretApi.Infrastructure.Services
 			bool result;
 			foreach (IFormFile file in files)
 			{
-				try
-				{
+				
 					string fileNewName = FileRenameAsync(uploadPath, file.FileName);
 
 					result = await CopyFileAsync($"{uploadPath}\\{fileNewName}", file);
 					results.Add(result);
-					datas.Add((fileNewName, $"{uploadPath}\\{fileNewName}"));
-				}
-				catch (Exception e)
-				{
-
-					throw;
-				}
+					datas.Add((fileNewName, $"{path}\\{fileNewName}"));
+			
 			
 			}
 
