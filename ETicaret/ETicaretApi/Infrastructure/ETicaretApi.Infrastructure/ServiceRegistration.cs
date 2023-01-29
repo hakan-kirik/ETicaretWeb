@@ -1,5 +1,7 @@
-﻿using ETicaretApi.Application.Services;
+﻿using ETicaretApi.Application.Abstaction.Storage;
+using ETicaretApi.Application.Services;
 using ETicaretApi.Infrastructure.Services;
+using ETicaretApi.Infrastructure.Services.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,11 @@ namespace ETicaretApi.Infrastructure
 	{
 		public static void AddInfastructureServices(this IServiceCollection service) {
 			service.AddScoped<IFileService,FileService>();
+			service.AddScoped<IStorageService, StorageService>();
+		}
+		public static void  AddStorage<T>(this IServiceCollection service)where T:class, IStorage 
+		{
+			service.AddScoped<IStorage,T>();
 		}
 
 	}
