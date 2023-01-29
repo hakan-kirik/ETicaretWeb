@@ -1,4 +1,5 @@
-﻿using ETicaretApi.Application.Repositories.ProductRepo;
+﻿using ETicaretApi.Application.Abstaction.Storage;
+using ETicaretApi.Application.Repositories.ProductRepo;
 using ETicaretApi.Application.RequestParameters;
 using ETicaretApi.Application.Services;
 using ETicaretApi.Application.ViewModels.Products;
@@ -15,18 +16,17 @@ namespace ETicaretApi.API.Controllers
     {
         readonly private IProductReadRepository _productReadRepository;
         readonly private IProductWriteRepository _productWriteRepository;
-        readonly private IWebHostEnvironment _webHostEnvironment;
-        readonly private IFileService _fileService;
+        readonly private IStorage _storage;
+      
 
 		public ProductsController(IProductReadRepository productReadRepository,
                                   IProductWriteRepository productWriteRepository,
-                                  IWebHostEnvironment webHostEnvironment  ,
-                                  IFileService fileService)
+                                 IStorage storage)
         {
             _productReadRepository = productReadRepository;
             _productWriteRepository = productWriteRepository;
-			_webHostEnvironment = webHostEnvironment;
-            _fileService = fileService;
+		    _storage= storage;
+           
 		}
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] Pagination pagination)
@@ -105,7 +105,7 @@ namespace ETicaretApi.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Upload()
         {
-            await _fileService.UploadAsync("resource\\product-images", Request.Form.Files);
+            await _storage.UploadAsync("productimage", Request.Form.Files);
             return Ok();
         }
     }

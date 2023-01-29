@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ETicaretApi.Infrastructure.Services.Storage.Local
 {
-	public class LocalStorage : ILocalStorage
+	public class LocalStorage : Storage,ILocalStorage
 	{
 		private readonly IWebHostEnvironment _webHostEnvironment;
 		public LocalStorage(IWebHostEnvironment webHostEnvironment)
@@ -54,14 +54,13 @@ namespace ETicaretApi.Infrastructure.Services.Storage.Local
 			}
 			List<(string fileName, string path)> datas = new();
 			
-			bool result;
+			
 			string fileNewName;
 			foreach (IFormFile file in files)
 			{
 
-				//string fileNewName = FileRenameAsync(uploadPath, file.FileName);
-				//gecici durum;
-				fileNewName= file.Name;
+				fileNewName = FileRename(uploadPath, file.FileName,HasFile);
+				
 				await CopyFileAsync($"{uploadPath}\\{fileNewName}", file);
 				
 				datas.Add((fileNewName, $"{path}\\{fileNewName}"));
