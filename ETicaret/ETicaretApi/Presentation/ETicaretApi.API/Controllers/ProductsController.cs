@@ -1,4 +1,5 @@
 ﻿using ETicaretApi.Application.Abstaction.Storage;
+using ETicaretApi.Application.Repositories.ProductImageFileRepo;
 using ETicaretApi.Application.Repositories.ProductRepo;
 using ETicaretApi.Application.RequestParameters;
 using ETicaretApi.Application.Services;
@@ -16,19 +17,24 @@ namespace ETicaretApi.API.Controllers
     {
         readonly private IProductReadRepository _productReadRepository;
         readonly private IProductWriteRepository _productWriteRepository;
-        readonly private IStorage _storage;
-      
+        readonly private IStorageService _storageService;
+        readonly private IProductImageFileReadRepository _productImageFileReadRepository;
+        readonly private IProductImageFileWriteRepository _productImageFileWriteRepository;
 
 		public ProductsController(IProductReadRepository productReadRepository,
-                                  IProductWriteRepository productWriteRepository,
-                                 IStorage storage)
-        {
-            _productReadRepository = productReadRepository;
-            _productWriteRepository = productWriteRepository;
-		    _storage= storage;
-           
+            IProductWriteRepository productWriteRepository,
+            IStorageService storageService,
+            IProductImageFileReadRepository productImageFileReadRepository, 
+            IProductImageFileWriteRepository productImageFileWriteRepository)
+		{
+			_productReadRepository = productReadRepository;
+			_productWriteRepository = productWriteRepository;
+			_storageService = storageService;
+			_productImageFileReadRepository = productImageFileReadRepository;
+			_productImageFileWriteRepository = productImageFileWriteRepository;
 		}
-        [HttpGet]
+
+		[HttpGet]
         public async Task<IActionResult> Get([FromQuery] Pagination pagination)
         {
             int totalCount = _productReadRepository.GetAll(false).Count();   
@@ -103,9 +109,22 @@ namespace ETicaretApi.API.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Upload()
+        public async Task<IActionResult> Upload(string id)
         {
-            await _storage.UploadAsync("productimage", Request.Form.Files);
+           List<(string fileName,string pathOrContainerName)> results= await _storageService.UploadAsync("productimage", Request.Form.Files);
+
+            Product product = await _productReadRepository.GetByIdAsync(id);
+
+            await _productImageFileWriteRepository.AddRangeAsync(results.Select(result => new ProductImageFile
+            {
+                FileName = result.fileName,
+                Path = result.pathOrContainerName,
+                Storage = _storageService.StorageName,
+                Products = new List<Product>() { product }
+            }).ToList());
+
+            await _productImageFileWriteRepository.SaveAsync();
+
             return Ok();
         }
     }
