@@ -1,3 +1,4 @@
+using ETicaretApi.Application;
 using ETicaretApi.Application.Validators.Products;
 using ETicaretApi.Infrastructure;
 using ETicaretApi.Infrastructure.Filters;
@@ -11,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddPersistanceServices();
 builder.Services.AddInfastructureServices();
+builder.Services.AddApplicationServices();
 //builder.Services.AddStorage<LocalStorage>();
 builder.Services.AddStorage<AzureStorage>();
 builder.Services.AddCors(options=>options.AddDefaultPolicy(policy=>policy.WithOrigins("http://localhost:4200", "https://localhost:4200").AllowAnyHeader().AllowAnyMethod()

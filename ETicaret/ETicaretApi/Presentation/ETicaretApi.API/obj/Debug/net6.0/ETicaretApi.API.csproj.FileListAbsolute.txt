@@ -142,3 +142,6 @@ C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETic
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\System.IO.Hashing.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\MediatR.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

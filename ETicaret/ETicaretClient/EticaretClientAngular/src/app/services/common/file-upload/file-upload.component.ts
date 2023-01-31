@@ -32,7 +32,7 @@ export class FileUploadComponent {
     const fileData: FormData = new FormData();
     for (const file of files) {
       (file.fileEntry as FileSystemFileEntry).file((_file: File) => {
-        fileData.append(_file.name, _file, file.relativePath);
+        fileData.append('Files', _file, file.relativePath);//_file.name
       });
     }
     
