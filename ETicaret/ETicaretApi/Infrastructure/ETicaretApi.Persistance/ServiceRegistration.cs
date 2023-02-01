@@ -4,6 +4,7 @@ using ETicaretApi.Application.Repositories.InvoiceFileRepo;
 using ETicaretApi.Application.Repositories.OrderRepo;
 using ETicaretApi.Application.Repositories.ProductImageFileRepo;
 using ETicaretApi.Application.Repositories.ProductRepo;
+using ETicaretApi.Domain.Entities.Identity;
 using ETicaretApi.Persistance.Contexts;
 using ETicaretApi.Persistance.Repositories.CustomerRepo;
 using ETicaretApi.Persistance.Repositories.FileRepo;
@@ -38,6 +39,14 @@ namespace ETicaretApi.Persistance
 			service.AddScoped<IProductImageFileWriteRepository, ProductImageFileWriteRepository>();
 			service.AddScoped<IInvoiceFileReadRepository, InvoiceFileReadRepository>();
 			service.AddScoped<IInvoiceFileWriteRepository, InvoiceFileWriteRepository>();
+			service.AddIdentity<AppUser, AppRole>(options =>
+			{
+				options.Password.RequiredLength = 3;
+				options.Password.RequireNonAlphanumeric = false;
+				options.Password.RequireDigit = false;
+				options.Password.RequireLowercase = false;
+				options.Password.RequireUppercase = false;
+			}).AddEntityFrameworkStores<ETicaretAPIDbContext>();
 
 		}
 
