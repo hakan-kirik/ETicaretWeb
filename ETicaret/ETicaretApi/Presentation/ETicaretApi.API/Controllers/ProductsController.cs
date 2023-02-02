@@ -14,6 +14,7 @@ using ETicaretApi.Application.Services;
 using ETicaretApi.Application.ViewModels.Products;
 using ETicaretApi.Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +24,8 @@ namespace ETicaretApi.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+	[Authorize(AuthenticationSchemes = "Admin")]
+	public class ProductsController : ControllerBase
     {
         readonly private IProductReadRepository _productReadRepository;
         readonly private IProductWriteRepository _productWriteRepository;
