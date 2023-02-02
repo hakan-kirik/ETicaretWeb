@@ -20,13 +20,16 @@
               <a class="nav-link active" aria-current="page" routerLink="basket">Basket</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="register">Kayıt Ol</a>
+              <a class="nav-link active" aria-current="page" routerLink="register" *ngIf="!authService.isAuthenticated">Kayıt Ol</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="login">Giri yap</a>
+              <a class="nav-link active" aria-current="page" routerLink="login" *ngIf="!authService.isAuthenticated">Giris yap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="signOut()" *ngIf="authService.isAuthenticated">Cikis yap</a>
             </li>
             <li>
-              <a class="btn btn-outline-success" routerLink="admin">Admin</a>
+              <a class="btn btn-outline-success" routerLink="admin" *ngIf="authService.isAuthenticated">Admin</a>
             </li>
         
             <li class="nav-item dropdown">
