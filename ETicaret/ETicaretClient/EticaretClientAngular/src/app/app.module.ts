@@ -8,10 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './ui/components/login/login.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { HttpErrorHandlerInterceptorServiceService } from './services/common/http-error-handler-interceptor-service.service';
 
 
 
@@ -35,8 +36,11 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     HttpClientModule,
     JwtModule.forRoot({
       config:{
-        tokenGetter:()=>localStorage.getItem("accessKey"),
-        allowedDomains:["localhost:7243"]
+        tokenGetter:()=>{
+           return localStorage.getItem("accessKey");
+     
+      },
+       allowedDomains:["localhost:7243"]
        
       }
     }),
@@ -58,7 +62,8 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
         ],
         onError: err => console.log(err)
       } as SocialAuthServiceConfig
-    }
+    },
+    {provide:HTTP_INTERCEPTORS,useClass:HttpErrorHandlerInterceptorServiceService,multi:true}
   ],
   bootstrap: [AppComponent]
 })

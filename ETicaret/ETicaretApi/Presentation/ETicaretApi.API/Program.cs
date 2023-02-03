@@ -32,7 +32,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateLifetime=true,//olusuturulan tokenin  suresini kontrol edecek deger
             ValidateIssuerSigningKey= true,//security key dogrulanmasi
             
-            ValidAudience = builder.Configuration["Token:Audinece"],
+            ValidAudience = builder.Configuration["Token:Audience"],
             ValidIssuer= builder.Configuration["Token:Issuer"],
             IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"]))
 		};
