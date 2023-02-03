@@ -9,48 +9,28 @@ using System.Threading.Tasks;
 using ETicaretApi.Application.Exceptions;
 using ETicaretApi.Application.Abstaction.Token;
 using ETicaretApi.Application.DTOs;
+using ETicaretApi.Application.Services;
 
 namespace ETicaretApi.Application.Features.Commands.AppUser.LoginUser
 {
 	public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, LoginUserCommandResponse>
 	{
-		readonly UserManager<E.AppUser> userManager;
-		readonly SignInManager<E.AppUser> signInManager;
-		readonly ITokenHandler tokenHandler;
+		readonly IAuthService _authService;
 
-		public LoginUserCommandHandler(UserManager<E.AppUser> userManager, 
-			SignInManager<E.AppUser> signInManager,
-			ITokenHandler tokenHandler
-			)
+		public LoginUserCommandHandler(IAuthService authService)
 		{
-			this.userManager = userManager;
-			this.signInManager = signInManager;
-			this.tokenHandler= tokenHandler;
+			_authService = authService;
 		}
 
 		public async Task<LoginUserCommandResponse> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
 		{
-			E.AppUser user = await userManager.FindByEmailAsync(request.UsernameOrEmail);
-			if (user == null)
+			var token = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 3600);
+			return new LoginUserSuccessCommandResponse()
 			{
-				user=await userManager.FindByNameAsync(request.UsernameOrEmail);
-			}
-			if(user == null)
-			{
-				throw new NotFoundUserException();
-			}
-			SignInResult result = await signInManager.CheckPasswordSignInAsync(user, request.Password, false);
-			if(result.Succeeded)
-			{
-				Token token = tokenHandler.CreateAccessToken(5);
-				return new LoginUserSuccessCommandResponse()
-				{
-					Token = token,
-				};
+				Token = token,
+			};
 
-			}
-
-			throw new AuthenticationErrorException();
+			
 		}
 	}
 }

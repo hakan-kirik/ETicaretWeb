@@ -6,43 +6,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ETicaretApi.Application.Services;
+using ETicaretApi.Application.DTOs;
 
 namespace ETicaretApi.Application.Features.Commands.AppUser.CreateUser
 {
 	public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, CreateUserCommandResponse>
 	{
-		readonly UserManager<N.AppUser> userManager;
+		readonly IUserService _userService;
 
-		public CreateUserCommandHandler(UserManager<N.AppUser> userManager)
+		public CreateUserCommandHandler(IUserService userService)
 		{
-			this.userManager = userManager;
+			_userService = userService;
 		}
 
 		public async Task<CreateUserCommandResponse> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
 		{
+			CreateUserResponse response=await _userService.CreateAsync(new()
+			{
+				Email= request.Email,
+				NameSurname= request.NameSurname,
+				Password= request.Password,
+				PasswordConfirm= request.PasswordConfirm,
+				Username= request.Username,
+			});
+			return new()
+			{
+				Message = response.Message,
+				Succeeded = response.Succeeded,
+			};
 
-			IdentityResult result= await userManager.CreateAsync(new()
-			{
-				Id = Guid.NewGuid().ToString(),
-				UserName = request.Username,
-				Email = request.Email,
-				NameSurname = request.NameSurname,
-			}, request.Password);
-
-			CreateUserCommandResponse response = new() { Succeeded = result.Succeeded };
-			if (result.Succeeded)
-			{
-				response.Message = "kullanici kayit edildi";
-			}
-			else
-			{
-				foreach(var error in result.Errors)
-				{
-					response.Message += $"{error.Code}-{error.Description}\n";
-				}
-				
-			}
-			return response;
 		}
 	}
 }

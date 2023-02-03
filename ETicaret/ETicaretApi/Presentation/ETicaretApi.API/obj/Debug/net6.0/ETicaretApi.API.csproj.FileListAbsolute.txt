@@ -158,3 +158,8 @@ C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETic
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Google.Apis.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Google.Apis.Auth.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Google.Apis.Core.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Newtonsoft.Json.dll

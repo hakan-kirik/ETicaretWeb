@@ -16,7 +16,7 @@ export class AppComponent {
     authService.identityCheck();
   }
 signOut() {
-  localStorage.removeItem("accessToken");
+  localStorage.removeItem("accessKey");
   this.authService.identityCheck();
   this.router.navigate([""]);
   this.toastrService.message("Oturum kapatılmıştır!", "Oturum Kapatıldı", {
