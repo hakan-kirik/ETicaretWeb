@@ -9,5 +9,6 @@ namespace ETicaretApi.Application.Services
 {
 	public interface IAuthService:IExternalAuthentication,IInternalAuthentication
 	{
+		
 	}
 }

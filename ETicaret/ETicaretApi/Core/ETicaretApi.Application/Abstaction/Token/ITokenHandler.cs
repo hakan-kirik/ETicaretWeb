@@ -10,5 +10,6 @@ namespace ETicaretApi.Application.Abstaction.Token
 	public interface ITokenHandler
 	{
 		DTO.Token CreateAccessToken(int minute);
+		string CreateRefreshToken();
 	}
 }

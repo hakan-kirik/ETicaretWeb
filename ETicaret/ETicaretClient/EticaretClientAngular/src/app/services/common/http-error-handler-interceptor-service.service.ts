@@ -2,13 +2,14 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpStatusCode } 
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { CustomToasterService, ToastrMessageType, ToastrPosition } from '../ui/custom-toaster.service';
+import { UserAuthService } from './user-auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpErrorHandlerInterceptorServiceService implements HttpInterceptor{
 
-  constructor(private toastrService:CustomToasterService) { }
+  constructor(private toastrService:CustomToasterService,private userAuthService: UserAuthService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     return next.handle(req).pipe(catchError(error => {
@@ -17,6 +18,9 @@ export class HttpErrorHandlerInterceptorServiceService implements HttpIntercepto
           this.toastrService.message("Bu işlemi yapmaya yetkiniz bulunmamaktadır!", "Yetkisiz işlem!", {
             messageType: ToastrMessageType.Warning,
             position: ToastrPosition.BottomFullWidth
+          });
+          this.userAuthService.refreshTokenLogin(localStorage.getItem("refreshToken")).then(data => {
+
           });
           break;
         case HttpStatusCode.InternalServerError:

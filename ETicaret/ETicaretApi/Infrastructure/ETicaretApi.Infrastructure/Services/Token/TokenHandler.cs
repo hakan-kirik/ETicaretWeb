@@ -21,6 +21,8 @@ namespace ETicaretApi.Infrastructure.Services.Token
 			this.configuration = configuration;
 		}
 
+	
+
 		public Application.DTOs.Token CreateAccessToken(int minute)
 		{
 			Dto.Token token = new();
@@ -42,10 +44,16 @@ namespace ETicaretApi.Infrastructure.Services.Token
 
 			JwtSecurityTokenHandler tokenHandler= new();
 			token.AccessToken=tokenHandler.WriteToken(securityToken);
+			token.RefreshToken = CreateRefreshToken();
 			return token;
 
-
-			
+		}
+		public string CreateRefreshToken()
+		{
+			byte[] number = new byte[32];
+			using RandomNumberGenerator random = RandomNumberGenerator.Create();
+			random.GetBytes(number);
+			return Convert.ToBase64String(number);
 		}
 	}
 }
