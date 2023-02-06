@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using ETicaretApi.Domain.Entities.Identity;
+using System.Security.Claims;
 
 namespace ETicaretApi.Infrastructure.Services.Token
 {
@@ -23,22 +25,23 @@ namespace ETicaretApi.Infrastructure.Services.Token
 
 	
 
-		public Application.DTOs.Token CreateAccessToken(int minute)
+		public Application.DTOs.Token CreateAccessToken(int second,AppUser appUser)
 		{
 			Dto.Token token = new();
 
 			SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(configuration["Token:SecurityKey"]));
 
-			SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
+			SigningCredentials signingCredential = new(securityKey, SecurityAlgorithms.HmacSha256);
 
-			token.Expiration=DateTime.UtcNow.AddMinutes(minute);
+			token.Expiration=DateTime.UtcNow.AddSeconds(second);
 
 			JwtSecurityToken securityToken = new(
 				audience: configuration["Token:Audience"],
 				issuer: configuration["Token:Issuer"],
-				expires:token.Expiration,
 				notBefore:DateTime.UtcNow,
-				signingCredentials:signingCredentials
+				expires: token.Expiration,
+				signingCredentials:signingCredential,
+				claims:new List<Claim> { new (ClaimTypes.Name,appUser.UserName)}
 				
 				);
 

@@ -163,3 +163,14 @@ C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETic
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Google.Apis.Auth.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Google.Apis.Core.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.PostgreSQL.dll

@@ -40,7 +40,7 @@ export class UserAuthService {
     const tokenResponse: TokenResponse = await firstValueFrom(observable) as TokenResponse;
 
     if (tokenResponse) {
-      localStorage.setItem("accessToken", tokenResponse.token.accessToken);
+      localStorage.setItem("accessKey", tokenResponse.token.accessToken);
       localStorage.setItem("refreshToken", tokenResponse.token.refreshToken);
     }
 

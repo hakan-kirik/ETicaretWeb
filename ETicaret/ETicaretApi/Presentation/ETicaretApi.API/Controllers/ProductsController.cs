@@ -27,35 +27,21 @@ namespace ETicaretApi.API.Controllers
 	[Authorize(AuthenticationSchemes = "Admin")]
 	public class ProductsController : ControllerBase
     {
-        readonly private IProductReadRepository _productReadRepository;
-        readonly private IProductWriteRepository _productWriteRepository;
-        readonly private IStorageService _storageService;
-        readonly private IProductImageFileReadRepository _productImageFileReadRepository;
-        readonly private IProductImageFileWriteRepository _productImageFileWriteRepository;
-        readonly IConfiguration _configuration;
+    
         readonly IMediator _mediator;
-        public ProductsController(IProductReadRepository productReadRepository,
-            IProductWriteRepository productWriteRepository,
-            IStorageService storageService,
-            IProductImageFileReadRepository productImageFileReadRepository,
-            IProductImageFileWriteRepository productImageFileWriteRepository,
-            IConfiguration configuration,
+		readonly ILogger<ProductsController> _logger;
+		public ProductsController(ILogger<ProductsController> logger,
             IMediator mediator
             )
         {
-            _productReadRepository = productReadRepository;
-            _productWriteRepository = productWriteRepository;
-            _storageService = storageService;
-            _productImageFileReadRepository = productImageFileReadRepository;
-            _productImageFileWriteRepository = productImageFileWriteRepository;
-            _configuration = configuration;
+            _logger = logger;
             _mediator = mediator;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetAllProductQueryRequest pagination)
         {
-
+            _logger.LogInformation("get all products");
             var response = await _mediator.Send(pagination);
             return Ok(response);
 
