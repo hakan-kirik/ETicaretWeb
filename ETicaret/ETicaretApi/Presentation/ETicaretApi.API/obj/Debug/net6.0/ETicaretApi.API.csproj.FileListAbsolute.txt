@@ -174,3 +174,5 @@ C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETic
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.File.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\Serilog.Sinks.PostgreSQL.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\ETicaretApi.SignalR.dll
+C:\Users\owl\Documents\GitHub\ETicaretWeb\ETicaret\ETicaretApi\Presentation\ETicaretApi.API\bin\Debug\net6.0\ETicaretApi.SignalR.pdb

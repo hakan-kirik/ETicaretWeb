@@ -1712,6 +1712,22 @@
         "runtime": {
           "bin/placeholder/ETicaretApi.Persistance.dll": {}
         }
+      },
+      "ETicaretApi.SignalR/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ETicaretApi.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ETicaretApi.SignalR.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ETicaretApi.SignalR.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -4906,6 +4922,11 @@
       "type": "project",
       "path": "../../Infrastructure/ETicaretApi.Persistance/ETicaretApi.Persistance.csproj",
       "msbuildProject": "../../Infrastructure/ETicaretApi.Persistance/ETicaretApi.Persistance.csproj"
+    },
+    "ETicaretApi.SignalR/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/ETicaretApi.SignalR/ETicaretApi.SignalR.csproj",
+      "msbuildProject": "../../Infrastructure/ETicaretApi.SignalR/ETicaretApi.SignalR.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4913,6 +4934,7 @@
       "ETicaretApi.Application >= 1.0.0",
       "ETicaretApi.Infrastructure >= 1.0.0",
       "ETicaretApi.Persistance >= 1.0.0",
+      "ETicaretApi.SignalR >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.13",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.0",
       "Serilog.AspNetCore >= 6.1.0",
@@ -4953,6 +4975,9 @@
             },
             "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj": {
               "projectPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.Persistance\\ETicaretApi.Persistance.csproj"
+            },
+            "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.SignalR\\ETicaretApi.SignalR.csproj": {
+              "projectPath": "C:\\Users\\owl\\Documents\\GitHub\\ETicaretWeb\\ETicaret\\ETicaretApi\\Infrastructure\\ETicaretApi.SignalR\\ETicaretApi.SignalR.csproj"
             }
           }
         }

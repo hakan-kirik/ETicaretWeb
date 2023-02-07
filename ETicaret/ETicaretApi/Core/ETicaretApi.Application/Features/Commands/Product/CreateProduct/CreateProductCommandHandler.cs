@@ -1,4 +1,5 @@
-﻿using ETicaretApi.Application.Repositories.ProductRepo;
+﻿using ETicaretApi.Application.Abstaction.Hubs;
+using ETicaretApi.Application.Repositories.ProductRepo;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,10 @@ namespace ETicaretApi.Application.Features.Commands.Product.CreateProduct
 	public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, CreateProductCommandResponse>
 	{
 		readonly IProductWriteRepository _productWriteRepository;
-
-		public CreateProductCommandHandler(IProductWriteRepository productWriteRepository)
+		readonly IProductHubService _productHubService;
+		public CreateProductCommandHandler(IProductWriteRepository productWriteRepository,IProductHubService productHub)
 		{
+			_productHubService= productHub;
 			_productWriteRepository = productWriteRepository;
 		}
 
@@ -27,7 +29,7 @@ namespace ETicaretApi.Application.Features.Commands.Product.CreateProduct
 				Stock = request.Stock,
 			});
 			await _productWriteRepository.SaveAsync();
-
+			await _productHubService.ProductAddedMessageAsync($"{request.Name} adli urun eklenmistir");
 			return new();
 		}
 	}
