@@ -1,7 +1,9 @@
 ﻿using ETicaretApi.Application.Abstaction.Storage;
 using ETicaretApi.Application.Abstaction.Token;
 using ETicaretApi.Application.Services;
+using ETicaretApi.Application.Services.Configurations;
 using ETicaretApi.Infrastructure.Services;
+using ETicaretApi.Infrastructure.Services.Configurations;
 using ETicaretApi.Infrastructure.Services.Storage;
 using ETicaretApi.Infrastructure.Services.Token;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,7 @@ namespace ETicaretApi.Infrastructure
 			service.AddScoped<IFileService,FileService>();
 			service.AddScoped<IStorageService, StorageService>();
 			service.AddScoped<ITokenHandler,TokenHandler>();
+			service.AddScoped<IApplicationService, ApplicationService>();
 		}
 		public static void  AddStorage<T>(this IServiceCollection service)where T: Storage, IStorage 
 		{

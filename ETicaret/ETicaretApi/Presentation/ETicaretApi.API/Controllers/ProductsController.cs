@@ -1,4 +1,7 @@
 ﻿using ETicaretApi.Application.Abstaction.Storage;
+using ETicaretApi.Application.Const;
+using ETicaretApi.Application.CustomAttributes;
+using ETicaretApi.Application.Enums;
 using ETicaretApi.Application.Features.Commands.Product.CreateProduct;
 using ETicaretApi.Application.Features.Commands.Product.RemoveProduct;
 using ETicaretApi.Application.Features.Commands.Product.UpdateProduct;
@@ -39,6 +42,7 @@ namespace ETicaretApi.API.Controllers
         }
 
         [HttpGet]
+        [AuthorizeDefinition(Menu =AuthorizeDefinationConstans.Products,ActionType =Application.Enums.ActionType.Reading,Definition ="Delete Product")]
         public async Task<IActionResult> Get([FromQuery] GetAllProductQueryRequest pagination)
         {
             _logger.LogInformation("get all products");
@@ -47,6 +51,7 @@ namespace ETicaretApi.API.Controllers
 
         }
         [HttpGet("{Id}")]
+        [AuthorizeDefinition(Menu =AuthorizeDefinationConstans.Products,ActionType =ActionType.Reading,Definition ="Delete product by id")]
         public async Task<IActionResult> Get([FromRoute] GetProductByIdQueryRequest getProductById)
         {
             var response = await _mediator.Send(getProductById);
@@ -56,6 +61,7 @@ namespace ETicaretApi.API.Controllers
         }
 
         [HttpPost]
+        [AuthorizeDefinition(Menu =AuthorizeDefinationConstans.Products,ActionType =ActionType.Writing,Definition ="Create product")]
         public async Task<IActionResult> Post([FromBody]CreateProductCommandRequest model)
         {
 
@@ -65,6 +71,7 @@ namespace ETicaretApi.API.Controllers
         }
 
         [HttpPut]
+        [AuthorizeDefinition(Menu =AuthorizeDefinationConstans.Products,ActionType =ActionType.Updating,Definition ="Update product")]
         public async Task<IActionResult> Put([FromBody] UpdateProductCommandRequest request)
         {
             await _mediator.Send(request);
